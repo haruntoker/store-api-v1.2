@@ -8,6 +8,9 @@ const app = express()
 const notFoundMiddleware = require('./middleware/not-found')
 const errorMiddleware = require("./middleware/error-handler")
 
+//routes import
+const products = require('./routes/products')
+
 app.use(express.json())
 
 // routes
@@ -16,24 +19,15 @@ app.get('/', (req,res)=>{
 })
 
 
-//products routes
+app.use('/api/v1/products', products)
 
+
+//products routes
 
 
 //call custom middleware
 app.use(notFoundMiddleware)
 app.use(errorMiddleware)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -63,4 +57,7 @@ const connect = async() =>{
 }
 
 connect()
+
+
+
 
