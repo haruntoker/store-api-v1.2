@@ -3,6 +3,8 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const app = express()
 
+//express error handler package
+require('express-async-errors')
 
 //middlewares
 const notFoundMiddleware = require('./middleware/not-found')
