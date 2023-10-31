@@ -23,13 +23,16 @@ const connect = async () => {
     });
     await Product.deleteMany();
     await Product.create(jsonProducts)
-
+    
     console.log("DB connected successfully!");
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
+
+    process.exit(0)
+    
   } catch (error) {
-    console.log(error);
+    process.exit(1)
   }
 }
 
