@@ -11,9 +11,9 @@ const productSchema = new mongoose.Schema({
         required: [true, 'Provide the Price!']
     },
 
-    feature:{
+    featured:{
         type: Boolean,
-        default:false
+        default:false,
     },
 
     rating:{
